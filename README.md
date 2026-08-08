@@ -3,7 +3,7 @@
 This repository contains the Machine Learning Proof of Concept for the **Diet-Driven Immuno-Metabolic Score (DIMS-AI)**, a clinical decision-support tool designed for Type 2 Diabetes management for countries in Sub SAharan Africa.
 
 ## 📌 Project Overview
-Current diabetes care heavily relies on HbA1c, often missing unresolved chronic inflammation that drives complications. DIMS-AI combines:
+Current diabetes care heavily relies on HbA1c. This often misses unresolved chronic inflammation that drives complications. DIMS-AI combines:
 1. **Glycaemic Control** (HbA1c)
 2. **Inflammation Marker** (hs-CRP)
 3. **Dietary Butyrate Potential** (via a 7-item localized Food Frequency Questionnaire)
