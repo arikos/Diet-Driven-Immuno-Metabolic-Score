@@ -15,7 +15,9 @@ The scoring logic adapts principles from the Dietary Inflammatory Index (DII) bu
 The composite Immuno-Metabolic Score is derived from a biologically grounded, weighted linear combination of clinical and dietary features, normalized to a 0–100 scale.
 
 **Raw Risk Calculation:**
-$$ \text{DIMS}_{\text{raw}} = \sum_{i=1}^{n} w_i \cdot X_i + \epsilon $$
+$$
+\text{DIMS}_{\text{raw}} = \sum_{i=1}^{n} w_i \cdot X_i + \epsilon
+$$
 
 Where:
 - $X_i$ represents the normalized nutritional and clinical feature inputs (e.g., HbA1c, hs-CRP, FFQ ordinal frequencies).
