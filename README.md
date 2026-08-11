@@ -51,7 +51,7 @@ To run the local clinical dashboard:
 ```bash
 streamlit run app.py
 
-## ️ Requirements & Setup
+## ️Requirements & Setup
 
 To run the pipeline locally:
 ```bash
