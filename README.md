@@ -30,16 +30,21 @@ Where:
 ## 3. Pipeline & Software Architecture
 
 **Data Sources:**
-The model is currently validated on a biologically plausible synthetic bio-cohort ($N=1,000$ virtual Ugandan T2D patients). Distribution parameters are strictly informed by regional epidemiologica[...]
+The model is currently validated on a biologically plausible synthetic bio-cohort ($N=1,000$ virtual Ugandan T2D patients). Distribution parameters are strictly informed by regional epidemiological baselines (e.g., mean HbA1c $\approx 9.9\%$ in Ugandan cohorts; elevated baseline hs-CRP distributions in African populations).
 
-**Feature Pipeline:**
-1. **Clinical Inputs:** Continuous biomarkers (HbA1c, hs-CRP).
-2. **Dietary Inputs:** 7-item localized Food Frequency Questionnaire (FFQ) mapped to ordinal vectors (0=Rarely to 3=Daily).
-3. **Preprocessing:** Ordinal encoding and min-max scaling to generate standardized inflammatory/metabolic vectors.
+**Feature Pipeline (11 Inputs):**
+1. **Clinical Biomarkers:** HbA1c (glycaemic control), hs-CRP (systemic inflammation)
+2. **Anthropometrics:** Waist Circumference (visceral adiposity marker)
+3. **Clinical Flags:** Acute Illness Flag (fever/malaria/UTI in last 14 days) - *prevents false positives from transient inflammation*
+4. **Dietary Inputs:** 7-item localized Food Frequency Questionnaire (FFQ) mapped to ordinal vectors (0=Rarely to 3=Daily)
 
 **Model & Algorithm:**
-- **Core Engine:** Supervised regression via **XGBoost Regressor**, benchmarked against Random Forest. XGBoost was selected for its superior handling of non-linear feature interactions and lower M[...]
-- **Explainability:** **SHAP (SHapley Additive exPlanations)** is integrated to provide transparent, clinician-friendly feature attribution, ensuring the model is not a "black box."
+- **Core Engine:** Supervised regression via **XGBoost Regressor** (MAE: 6.07, R²: 0.776), benchmarked against Random Forest.
+- **Explainability:** **SHAP (SHapley Additive exPlanations)** integrated for transparent, clinician-friendly feature attribution.
+- **Clinical Safeguards:** Context-aware decision support that explicitly flags non-dietary drivers of inflammation when dietary inputs are optimal.
+
+**Interactive Application:**
+- **Streamlit Web App:** A fully functional, offline-capable clinical dashboard (`app.py`) that allows real-time score calculation, SHAP visualization, and automated clinical recommendations.
 
 ## ️ Requirements & Setup
 
