@@ -45,6 +45,11 @@ The model is currently validated on a biologically plausible synthetic bio-cohor
 
 **Interactive Application:**
 - **Streamlit Web App:** A fully functional, offline-capable clinical dashboard (`app.py`) that allows real-time score calculation, SHAP visualization, and automated clinical recommendations.
+## 🖥️ Interactive Demo
+
+To run the local clinical dashboard:
+```bash
+streamlit run app.py
 
 ## ️ Requirements & Setup
 
